@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { ArrowRight, Clock } from 'lucide-react';
 
 const PromoBanner: React.FC = () => {
@@ -33,13 +34,19 @@ const PromoBanner: React.FC = () => {
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4">
-              <button className="group bg-red-600 hover:bg-red-700 text-white px-8 py-4 rounded-lg font-bold text-lg transition-all duration-300 transform hover:scale-105 flex items-center justify-center">
+              <Link 
+                to="/shop"
+                className="group bg-red-600 hover:bg-red-700 text-white px-8 py-4 rounded-lg font-bold text-lg transition-all duration-300 transform hover:scale-105 flex items-center justify-center"
+              >
                 Shop Collection
                 <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-              </button>
-              <button className="border-2 border-white text-white hover:bg-white hover:text-gray-900 px-8 py-4 rounded-lg font-bold text-lg transition-all duration-300">
+              </Link>
+              <Link 
+                to="/collections"
+                className="border-2 border-white text-white hover:bg-white hover:text-gray-900 px-8 py-4 rounded-lg font-bold text-lg transition-all duration-300"
+              >
                 View Lookbook
-              </button>
+              </Link>
             </div>
           </div>
           

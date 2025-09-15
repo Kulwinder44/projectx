@@ -1,8 +1,14 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Star, Heart, ShoppingCart, ArrowLeft, ArrowRight } from 'lucide-react';
 import { bestSellers } from '../data/products';
+import { useCart } from '../context/CartContext';
+import { useWishlist } from '../context/WishlistContext';
 
 const BestSellers: React.FC = () => {
+  const { addToCart } = useCart();
+  const { addToWishlist, removeFromWishlist, isInWishlist } = useWishlist();
+
   const getBadgeColor = (badge: string) => {
     switch (badge) {
       case 'New': return 'bg-green-500';
@@ -57,14 +63,30 @@ const BestSellers: React.FC = () => {
                 
                 {/* Quick Actions */}
                 <div className="absolute top-3 right-3 flex flex-col space-y-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <button className="p-2 bg-white rounded-full shadow-md hover:bg-red-600 hover:text-white transition-colors">
+                  <button 
+                    onClick={() => {
+                      if (isInWishlist(product.id)) {
+                        removeFromWishlist(product.id);
+                      } else {
+                        addToWishlist(product);
+                      }
+                    }}
+                    className={`p-2 rounded-full shadow-md transition-colors ${
+                      isInWishlist(product.id)
+                        ? 'bg-red-600 text-white'
+                        : 'bg-white hover:bg-red-600 hover:text-white'
+                    }`}
+                  >
                     <Heart className="h-4 w-4" />
                   </button>
                 </div>
                 
                 {/* Quick Add to Cart */}
                 <div className="absolute bottom-3 left-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <button className="w-full bg-red-600 hover:bg-red-700 text-white py-2 rounded-lg font-medium flex items-center justify-center space-x-2 transition-colors">
+                  <button 
+                    onClick={() => addToCart(product)}
+                    className="w-full bg-red-600 hover:bg-red-700 text-white py-2 rounded-lg font-medium flex items-center justify-center space-x-2 transition-colors"
+                  >
                     <ShoppingCart className="h-4 w-4" />
                     <span>Quick Add</span>
                   </button>
@@ -72,9 +94,19 @@ const BestSellers: React.FC = () => {
               </div>
               
               <div className="p-4">
-                <h3 className="font-bold text-gray-900 mb-2 group-hover:text-red-600 transition-colors">
-                  {product.name}
-                </h3>
+                <Link to={`/product/${product.id}`}>
+                  {product.id === '1' ? (
+                    <Link to="/running-shoes">
+                      <h3 className="font-bold text-gray-900 mb-2 group-hover:text-red-600 transition-colors">
+                        {product.name}
+                      </h3>
+                    </Link>
+                  ) : (
+                  <h3 className="font-bold text-gray-900 mb-2 group-hover:text-red-600 transition-colors">
+                    {product.name}
+                  </h3>
+                  )}
+                </Link>
                 
                 <div className="flex items-center mb-2">
                   <div className="flex items-center">
@@ -92,9 +124,9 @@ const BestSellers: React.FC = () => {
                 
                 <div className="flex items-center justify-between">
                   <div className="flex items-center space-x-2">
-                    <span className="text-xl font-bold text-gray-900">${product.price}</span>
+                    <span className="text-xl font-bold text-gray-900">₹{product.price}</span>
                     {product.originalPrice && (
-                      <span className="text-sm text-gray-500 line-through">${product.originalPrice}</span>
+                      <span className="text-sm text-gray-500 line-through">₹{product.originalPrice}</span>
                     )}
                   </div>
                   <span className="text-xs text-gray-500 bg-gray-100 px-2 py-1 rounded-full">
