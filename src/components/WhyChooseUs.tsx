@@ -11,7 +11,7 @@ const WhyChooseUs: React.FC = () => {
     {
       icon: Truck,
       title: 'Free Shipping',
-      description: 'Complimentary shipping on all orders over ₹4000 worldwide'
+      description: 'Complimentary shipping on all orders over $50 worldwide'
     },
     {
       icon: Users,

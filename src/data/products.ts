@@ -41,10 +41,10 @@ export const featuredCategories: Category[] = [
 export const bestSellers: Product[] = [
   {
     id: '1',
-    name: 'Pro Runner Elite Shoes',
-    price: 8750,
-    originalPrice: 11990,
-    image: 'https://images.pexels.com/photos/2402777/pexels-photo-2402777.jpeg?auto=compress&cs=tinysrgb&w=600',
+    name: 'Pro Runner Elite Tee',
+    price: 45,
+    originalPrice: 60,
+    image: 'https://images.pexels.com/photos/8922630/pexels-photo-8922630.jpeg?auto=compress&cs=tinysrgb&w=600',
     category: 'Running',
     badge: 'Hot',
     rating: 4.8,
@@ -53,8 +53,8 @@ export const bestSellers: Product[] = [
   {
     id: '2',
     name: 'Performance Training Shorts',
-    price: 3150,
-    image: 'https://images.pexels.com/photos/7242896/pexels-photo-7242896.jpeg?auto=compress&cs=tinysrgb&w=600',
+    price: 38,
+    image: 'https://images.pexels.com/photos/7988086/pexels-photo-7988086.jpeg?auto=compress&cs=tinysrgb&w=600',
     category: 'Gym',
     badge: 'New',
     rating: 4.9,
@@ -63,8 +63,8 @@ export const bestSellers: Product[] = [
   {
     id: '3',
     name: 'Legion Track Jacket',
-    price: 7400,
-    originalPrice: 9990,
+    price: 89,
+    originalPrice: 120,
     image: 'https://images.pexels.com/photos/7242896/pexels-photo-7242896.jpeg?auto=compress&cs=tinysrgb&w=600',
     category: 'Outdoor',
     badge: 'Limited Edition',
@@ -74,7 +74,7 @@ export const bestSellers: Product[] = [
   {
     id: '4',
     name: 'Flex Yoga Leggings',
-    price: 4325,
+    price: 52,
     image: 'https://images.pexels.com/photos/8436741/pexels-photo-8436741.jpeg?auto=compress&cs=tinysrgb&w=600',
     category: 'Yoga',
     rating: 4.9,
@@ -83,7 +83,7 @@ export const bestSellers: Product[] = [
   {
     id: '5',
     name: 'Victory Football Jersey',
-    price: 5400,
+    price: 65,
     image: 'https://images.pexels.com/photos/8032925/pexels-photo-8032925.jpeg?auto=compress&cs=tinysrgb&w=600',
     category: 'Football',
     badge: 'New',
@@ -93,9 +93,9 @@ export const bestSellers: Product[] = [
   {
     id: '6',
     name: 'Power Compression Tank',
-    price: 3500,
-    originalPrice: 4575,
-    image: 'https://images.pexels.com/photos/8436741/pexels-photo-8436741.jpeg?auto=compress&cs=tinysrgb&w=600',
+    price: 42,
+    originalPrice: 55,
+    image: 'https://images.pexels.com/photos/8032928/pexels-photo-8032928.jpeg?auto=compress&cs=tinysrgb&w=600',
     category: 'Gym',
     rating: 4.8,
     reviews: 203

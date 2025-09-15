@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { Zap, Dumbbell, Trophy, Heart, Mountain } from 'lucide-react';
 import { featuredCategories } from '../data/products';
 
@@ -29,8 +28,7 @@ const FeaturedCategories: React.FC = () => {
             const IconComponent = iconComponents[category.icon as keyof typeof iconComponents];
             
             return (
-              <Link
-                to={`/category/${category.id}`}
+              <div
                 key={category.id}
                 className="group relative overflow-hidden rounded-2xl cursor-pointer transform transition-all duration-300 hover:scale-105 hover:shadow-2xl"
               >
@@ -53,7 +51,7 @@ const FeaturedCategories: React.FC = () => {
                     <p className="text-gray-200 text-sm group-hover:text-white transition-colors">{category.tagline}</p>
                   </div>
                 </div>
-              </Link>
+              </div>
             );
           })}
         </div>
